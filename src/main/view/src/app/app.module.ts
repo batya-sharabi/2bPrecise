@@ -9,10 +9,17 @@ import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmployeeService } from './employee.service';
 import { HttpClientModule} from "@angular/common/http";
+import { DetailsComponent } from './details/details.component';
+import {RouterModule, Routes} from "@angular/router";
+
+const appRoutes: Routes = [
+  { path: 'details', component: DetailsComponent }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +31,11 @@ import { HttpClientModule} from "@angular/common/http";
     MatSortModule,
     MatProgressSpinnerModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]

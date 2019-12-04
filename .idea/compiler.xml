@@ -10,6 +10,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="2bPrecise.main" target="1.8" />
+      <module name="2bPrecise.test" target="1.8" />
       <module name="initial" target="1.8" />
       <module name="initial.main" target="1.8" />
       <module name="initial.test" target="1.8" />
